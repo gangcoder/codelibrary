@@ -31,6 +31,7 @@
 		for ($i=0; $i < $arr_len; $i++) { 
 			if (is_array($arr[$i])) {
 				$sum += array_sum_number($arr[$i],false);
+				//在这里使用数组指定使用sum
 			}else{
 				$sum += $arr[$i];
 				$GLOBALS['array_number']++;
@@ -38,6 +39,8 @@
 		}
 		
 		//整理数据与销毁
+
+		//可以不使用标记，全部用数组
 		if ($flag) {
 			echo "数组内有 {$GLOBALS['array_number']} 个元素 --: 所有元素和为 {$sum} --:该数组共有数值 {$GLOBALS['array_number']} 个<br/>"; //测试输出
 			$array['sum'] = $sum;
